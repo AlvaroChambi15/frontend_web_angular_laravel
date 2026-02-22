@@ -1,1 +1,43 @@
 <p>usuario works!</p>
+<br>
+{{ usuarioForm.value | json }}
+
+<form [formGroup]="usuarioForm">
+  <label>Nombre:</label>
+  <input type="text" formControlName="name">
+  <br>
+  <label>Email:</label>
+  <input type="email" formControlName="email">
+  <br>
+  <label>Password:</label>
+  <input type="password" formControlName="password">
+  <br>
+  <button (click)="guardarUsuario()" type="button">Crear Usuario</button>
+</form>
+
+<br><br>
+<hr>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>EMAIL</th>
+      <th>CREADO EN</th>
+      <th>ACCIÓN</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (usuario of usuarios() ; track $index) {
+      <tr>
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.name }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.created_at }}</td>
+        <td><button type="button">Mostrar</button></td>
+      </tr>
+    }
+  </tbody>
+
+</table>

@@ -1,1 +1,17 @@
 <p>login works!</p>
+
+
+
+<form [formGroup]="loginForm">
+  <label>Email:</label>
+  <input type="email" formControlName="email">
+  <br>
+  <label>Password:</label>
+  <input type="password" formControlName="password">
+  <br>
+  <button (click)="ingresar()" type="button">INGRESAR</button>
+</form>
+
+<br><br>
+<hr>
+{{ loginForm.value | json }}
