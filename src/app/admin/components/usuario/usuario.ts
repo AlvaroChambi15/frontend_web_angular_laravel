@@ -15,11 +15,20 @@ export class Usuario {
   //usuarios: any[] = [];
   usuarios = signal<any[]>([]);
 
+  value!: string;
+
+
   usuarioForm = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl('')
   });
+
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
 
   /*
   usuarios!: Observable<any[]>;
@@ -83,6 +92,8 @@ export class Usuario {
         console.log(res);
         this.getUsuarios();
         this.usuarioForm.reset();
+
+        this.visible = false;
       },
       error: (err) => {
         console.error(err);

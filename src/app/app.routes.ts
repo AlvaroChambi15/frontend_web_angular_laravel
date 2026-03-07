@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Inicio } from './web/inicio/inicio';
 import { Contactos } from './web/contactos/contactos';
 import { Servicios } from './web/servicios/servicios';
+import { AppLayout } from './layout/component/app.layout';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,12 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin-module').then(m => m.AdminModule)
+    component: AppLayout,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./admin/admin-module').then(m => m.AdminModule)
+      }]
   }
 
 ];
