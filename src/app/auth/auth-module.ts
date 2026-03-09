@@ -4,7 +4,15 @@ import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing-module';
 import { Login } from './login/login';
 import { Register } from './register/register';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { RouterModule } from '@angular/router';
+import { RippleModule } from 'primeng/ripple';
+import { AppFloatingConfigurator } from '../layout/component/app.floatingconfigurator';
+import { Nav } from '../web/components/nav/nav';
 
 
 @NgModule({
@@ -15,7 +23,15 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule,
+    CheckboxModule,
+    InputTextModule,
+    PasswordModule,
+    RouterModule,
+    RippleModule,
+    AppFloatingConfigurator,
+    Nav
   ]
 })
 export class AuthModule { }

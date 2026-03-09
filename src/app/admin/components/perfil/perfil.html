@@ -1,1 +1,24 @@
-<p>perfil works!</p>
+<div class="card">
+  <h1>PERFIL</h1>
+
+  <div>
+    <div class="col">
+      <div class="row" style="display: flex; align-items: center">
+        <h2>Nombre:</h2>
+        <p>{{ perfil().name }}</p>
+      </div>
+      <div class="row" style="display: flex; align-items: center">
+        <h2>Correo:</h2>
+        <p>{{ perfil().email }}</p>
+      </div>
+      <div class="row" style="display: flex; align-items: center">
+        <h2>ID:</h2>
+        <p>{{ perfil().id }}</p>
+      </div>
+      <div class="row" style="display: flex; align-items: center">
+        <h2>Fecha de creación:</h2>
+        <p>{{ perfil().created_at }}</p>
+      </div>
+    </div>
+  </div>
+</div>
